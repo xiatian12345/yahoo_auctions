@@ -33,6 +33,7 @@ yarn-error.log*
 *.sln
 *.sw*
 
+app.log
 h_source.js
 h.js
 main_source.js
