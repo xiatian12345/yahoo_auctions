@@ -37,4 +37,5 @@ h_source.js
 h.js
 main_source.js
 compile_source.js
+upload.js
 package-lock.json
