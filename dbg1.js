@@ -28,6 +28,10 @@ const launch = (isShow = true) => {
 
 (async () => {
     const listAddress = 'https://paypayfleamarket.yahoo.co.jp/my/purchase';
+    let currentIndex = 1;
+    console.log('当前网站：', config.sites[currentIndex].name)
+    let cfg = Object.assign({}, config.sites[currentIndex], sitesExt[currentIndex]);
     let page = await launch(true).catch();
+    await loginByCK(cfg, page).catch();
     await page.goto(listAddress, { waitUntil: "networkidle0" }).catch(() => { });
 })();

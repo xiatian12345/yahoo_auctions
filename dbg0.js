@@ -28,6 +28,10 @@ const launch = (isShow = true) => {
 
 (async () => {
     const listAddress = 'https://auctions.yahoo.co.jp/closeduser/jp/show/mystatus?select=won';
+    let currentIndex = 0;
+    console.log('当前网站：', config.sites[currentIndex].name)
+    let cfg = Object.assign({}, config.sites[currentIndex], sitesExt[currentIndex]);
     let page = await launch(true).catch();
+    await loginByCK(cfg, page).catch();
     await page.goto(listAddress, { waitUntil: "networkidle0" }).catch(() => { });
 })();
