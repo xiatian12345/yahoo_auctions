@@ -27,6 +27,23 @@ const launch = (isShow = true) => {
 }
 
 (async () => {
+    const sitesExt = [
+        {
+            loginAddress: "https://login.yahoo.co.jp/config/login",
+            mainAddress: "https://auctions.yahoo.co.jp/user/jp/show/mystatus",
+            listAddress: "https://auctions.yahoo.co.jp/closeduser/jp/show/mystatus?select=won",
+        },
+        {
+            loginAddress: "https://login.yahoo.co.jp/config/login",
+            mainAddress: "https://paypayfleamarket.yahoo.co.jp/",
+            listAddress: "https://paypayfleamarket.yahoo.co.jp/my/purchase",
+        },
+        {
+            loginAddress: "https://login.jp.mercari.com/signin",
+            mainAddress: "https://jp.mercari.com/mypage",
+            listAddress: "https://jp.mercari.com/mypage/purchases",
+        }
+    ];
     const listAddress = 'https://paypayfleamarket.yahoo.co.jp/my/purchase';
     let currentIndex = 1;
     console.log('当前网站：', config.sites[currentIndex].name)
