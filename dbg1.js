@@ -26,6 +26,21 @@ const launch = (isShow = true) => {
     });
 }
 
+const loginByCK = async (cfg, page) => {
+    try {
+        if (!cfg.ck) {
+            return 0;
+        }
+        await page.goto(cfg.loginAddress, { waitUntil: "networkidle0" }).catch(() => { });
+        await page.setCookie(...cfg.ck);
+        await page.goto(cfg.mainAddress, { waitUntil: "networkidle0" }).catch(() => { });
+        return 1;
+    } catch (e) {
+        console.log('error', e)
+        return 0;
+    }
+}
+
 (async () => {
     const sitesExt = [
         {
