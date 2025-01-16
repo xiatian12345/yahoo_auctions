@@ -20,6 +20,7 @@
     "consola": "^3.2.3",
     "crypto-js": "^4.2.0",
     "easy-pdf-merge": "^0.2.6",
+    "moment": "^2.30.1",
     "puppeteer-core": "^22.15.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
