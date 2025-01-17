@@ -35,6 +35,7 @@ yarn-error.log*
 
 app.log
 h_source.js
+merge_3_source.js
 h.js
 main_source.js
 compile_source.js
