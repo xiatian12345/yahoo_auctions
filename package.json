@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node compile_source.js && node main.js",
     "start": "node index.js",
-    "run": "git pull origin main && node index.js"
+    "main": "git pull origin main && node main.js",
+    "time": "git pull origin main && node time.js",
+    "merge": "git pull origin main && node merge.js"
   },
   "keywords": [],
   "author": "",
