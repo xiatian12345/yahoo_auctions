@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node compile_source.js && node index.js",
+    "build": "node compile_source.js && node main.js",
     "start": "node index.js",
     "run": "git pull origin main && node index.js"
   },
