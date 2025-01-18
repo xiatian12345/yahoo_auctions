@@ -33,6 +33,9 @@ yarn-error.log*
 *.sln
 *.sw*
 
+dbg0_source.js
+dbg1_source.js
+dbg2_source.js
 app.log
 h_source.js
 merge_3_source.js
