@@ -21,11 +21,13 @@
     "crypto-js": "^4.2.0",
     "easy-pdf-merge": "^0.2.6",
     "moment": "^2.30.1",
+    "node-cron": "^3.0.3",
     "puppeteer-core": "^22.15.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "puppeteer-interceptor": "^2.2.0",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "javascript-obfuscator": "^4.1.1"
