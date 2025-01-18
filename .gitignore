@@ -39,6 +39,8 @@ dbg2_source.js
 app.log
 h_source.js
 merge_3_source.js
+merge_source.js
+time_source.js
 h.js
 main_source.js
 compile_source.js

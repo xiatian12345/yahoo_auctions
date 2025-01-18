@@ -1,3 +1,3 @@
 const bytenode = require('bytenode');
-const main = require('./merge_3.jsc');
+const main = require('./time.jsc');
 main();
