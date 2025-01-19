@@ -25,7 +25,26 @@ const getSite3List = () => {
                 }
             });
             if (response && response.data && response.data.orders) {
-                resolve(response.data.orders)
+                let orders = response.data.orders;
+                for (let i = 0; i < orders.length; i++) {
+                    let order = orders[i];
+                    let id = null;
+                    let customPayLink = null;
+                    if (Number.isInteger(Number(order.originId))) {
+                        //个人
+                        order.isStore = false;
+                        id = order.orderDetail.lineItems[0].product.originId;
+                        customPayLink = `https://jp.mercari.com/transaction/${id}`;
+                    } else {
+                        order.isStore = true;
+                        id = order.originId;
+                        customPayLink = `https://mercari-shops.com/orders/${id}`;
+                    }
+                    order.customid = id;
+                    let name = order.orderDetail.lineItems[0].product.displayName;
+                    order.customName = name;
+                }
+                resolve(orders);
             } else {
                 resolve(null);
             }
@@ -115,5 +134,5 @@ const getSite3List = () => {
     // console.log(response.data.orders.length);
 
     let r = await getSite3List();
-    console.log(r);
+    console.log(JSON.stringify(r));
 })();
