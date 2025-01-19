@@ -57,7 +57,7 @@ const axios = require('axios');
 
     const response = await axios.get('https://api.mercari.jp/v1/orders', {
         params: {
-            'pageSize': '48',
+            'pageSize': '100',
             'imageType': 'IMAGE_TYPE_JPEG',
             //'pageToken': '1736925979'
         },
@@ -76,5 +76,5 @@ const axios = require('axios');
             'x-platform': 'web'
         }
     });
-    console.log(response.data);
+    console.log(response.data.order.length);
 })();
