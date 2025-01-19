@@ -1,4 +1,40 @@
 const axios = require('axios');
+
+const getSite3List = () => {
+    return new Promise(async (resolve) => {
+        try {
+            const response = await axios.get('https://api.mercari.jp/v1/orders', {
+                params: {
+                    'pageSize': '100',
+                    'imageType': 'IMAGE_TYPE_JPEG',
+                    //'pageToken': '1736925979'
+                },
+                headers: {
+                    'accept': 'application/json, text/plain, */*',
+                    'accept-language': 'ja',
+                    'authorization': 'zycKmD9UWNnT-cz-qyuQI-8ppWZdG6UwfO_Zz5PzkwcBZMTLgsHPdVWvcuNNyhAWL4EoExThPFmJmGH4Awmn9A.FE3gsnjdP8ImrCUqwXG08_bPvgx6dgpVaALKj3TTFfQ',
+                    // 'dpop': 'eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiZ2tPdjl6QlM5RVBhNjBRUE9OS1RtYmF2c1ZuYjB2d1RuY2dybjBjdmVORSIsInkiOiJ2c0ZzRWZiOUw2RkczbGhRc1FLTmtiaHNLMEI0WWkyV3VESTB3eUdPTHFRIn19.eyJpYXQiOjE3MzcyNzc3NTEsImp0aSI6ImUxYTJkZjk2LTM0M2QtNGM5MS04MDNlLTdkM2MyMGM1NWYzZSIsImh0dSI6Imh0dHBzOi8vYXBpLm1lcmNhcmkuanAvdjEvb3JkZXJzIiwiaHRtIjoiR0VUIiwidXVpZCI6Ijg2Mjc3Njk5LWYzMzQtNGNjZS1iYzUwLTNlOGZhZjE4MmQyNCJ9.-Ux_IcMw5P1D7aclhW3qMI6Rko1uHFpYuZTQS2PkHdekWY9bijIFGa8hmc4ertQ3lV4sPDfS98x5sEt1jx8o_g',
+                    'origin': 'https://jp.mercari.com',
+                    'priority': 'u=1, i',
+                    'referer': 'https://jp.mercari.com/',
+                    'sec-fetch-dest': 'empty',
+                    'sec-fetch-mode': 'cors',
+                    'sec-fetch-site': 'cross-site',
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                    'x-platform': 'web'
+                }
+            });
+            if (response && response.data && response.data.orders) {
+                resolve(response.data.orders)
+            } else {
+                resolve(null);
+            }
+
+        } catch (e) {
+            resolve(null);
+        }
+    });
+}
 (async () => {
     // const response = await axios.get('https://api.mercari.jp/v1/marketplaces/shops/products/9Bv8MfNhjsctmA4xDDe2kg', {
     //     params: {
@@ -55,26 +91,29 @@ const axios = require('axios');
     // console.log(response.data);
 
 
-    const response = await axios.get('https://api.mercari.jp/v1/orders', {
-        params: {
-            'pageSize': '100',
-            'imageType': 'IMAGE_TYPE_JPEG',
-            //'pageToken': '1736925979'
-        },
-        headers: {
-            'accept': 'application/json, text/plain, */*',
-            'accept-language': 'ja',
-            'authorization': 'zycKmD9UWNnT-cz-qyuQI-8ppWZdG6UwfO_Zz5PzkwcBZMTLgsHPdVWvcuNNyhAWL4EoExThPFmJmGH4Awmn9A.FE3gsnjdP8ImrCUqwXG08_bPvgx6dgpVaALKj3TTFfQ',
-            // 'dpop': 'eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiZ2tPdjl6QlM5RVBhNjBRUE9OS1RtYmF2c1ZuYjB2d1RuY2dybjBjdmVORSIsInkiOiJ2c0ZzRWZiOUw2RkczbGhRc1FLTmtiaHNLMEI0WWkyV3VESTB3eUdPTHFRIn19.eyJpYXQiOjE3MzcyNzc3NTEsImp0aSI6ImUxYTJkZjk2LTM0M2QtNGM5MS04MDNlLTdkM2MyMGM1NWYzZSIsImh0dSI6Imh0dHBzOi8vYXBpLm1lcmNhcmkuanAvdjEvb3JkZXJzIiwiaHRtIjoiR0VUIiwidXVpZCI6Ijg2Mjc3Njk5LWYzMzQtNGNjZS1iYzUwLTNlOGZhZjE4MmQyNCJ9.-Ux_IcMw5P1D7aclhW3qMI6Rko1uHFpYuZTQS2PkHdekWY9bijIFGa8hmc4ertQ3lV4sPDfS98x5sEt1jx8o_g',
-            'origin': 'https://jp.mercari.com',
-            'priority': 'u=1, i',
-            'referer': 'https://jp.mercari.com/',
-            'sec-fetch-dest': 'empty',
-            'sec-fetch-mode': 'cors',
-            'sec-fetch-site': 'cross-site',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            'x-platform': 'web'
-        }
-    });
-    console.log(response.data.orders.length);
+    // const response = await axios.get('https://api.mercari.jp/v1/orders', {
+    //     params: {
+    //         'pageSize': '100',
+    //         'imageType': 'IMAGE_TYPE_JPEG',
+    //         //'pageToken': '1736925979'
+    //     },
+    //     headers: {
+    //         'accept': 'application/json, text/plain, */*',
+    //         'accept-language': 'ja',
+    //         'authorization': 'zycKmD9UWNnT-cz-qyuQI-8ppWZdG6UwfO_Zz5PzkwcBZMTLgsHPdVWvcuNNyhAWL4EoExThPFmJmGH4Awmn9A.FE3gsnjdP8ImrCUqwXG08_bPvgx6dgpVaALKj3TTFfQ',
+    //         // 'dpop': 'eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiZ2tPdjl6QlM5RVBhNjBRUE9OS1RtYmF2c1ZuYjB2d1RuY2dybjBjdmVORSIsInkiOiJ2c0ZzRWZiOUw2RkczbGhRc1FLTmtiaHNLMEI0WWkyV3VESTB3eUdPTHFRIn19.eyJpYXQiOjE3MzcyNzc3NTEsImp0aSI6ImUxYTJkZjk2LTM0M2QtNGM5MS04MDNlLTdkM2MyMGM1NWYzZSIsImh0dSI6Imh0dHBzOi8vYXBpLm1lcmNhcmkuanAvdjEvb3JkZXJzIiwiaHRtIjoiR0VUIiwidXVpZCI6Ijg2Mjc3Njk5LWYzMzQtNGNjZS1iYzUwLTNlOGZhZjE4MmQyNCJ9.-Ux_IcMw5P1D7aclhW3qMI6Rko1uHFpYuZTQS2PkHdekWY9bijIFGa8hmc4ertQ3lV4sPDfS98x5sEt1jx8o_g',
+    //         'origin': 'https://jp.mercari.com',
+    //         'priority': 'u=1, i',
+    //         'referer': 'https://jp.mercari.com/',
+    //         'sec-fetch-dest': 'empty',
+    //         'sec-fetch-mode': 'cors',
+    //         'sec-fetch-site': 'cross-site',
+    //         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    //         'x-platform': 'web'
+    //     }
+    // });
+    // console.log(response.data.orders.length);
+
+    let r = await getSite3List();
+    console.log(r);
 })();
