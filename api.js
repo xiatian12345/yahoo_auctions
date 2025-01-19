@@ -50,6 +50,7 @@ const getSite3List = () => {
             }
 
         } catch (e) {
+            console.log(e);
             resolve(null);
         }
     });
