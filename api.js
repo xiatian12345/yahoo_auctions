@@ -197,6 +197,6 @@ const getSite2List = () => {
     // });
     // console.log(response.data.orders.length);
 
-    // let r = await getSite3List();
-    // console.log(JSON.stringify(r));
+    let r = await getSite3List();
+    console.log(JSON.stringify(r));
 })();
