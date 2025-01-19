@@ -76,5 +76,5 @@ const axios = require('axios');
             'x-platform': 'web'
         }
     });
-    console.log(response.data.order.length);
+    console.log(response.data.orders.length);
 })();
