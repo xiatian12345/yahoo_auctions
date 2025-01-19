@@ -9,7 +9,8 @@
     "start": "node index.js",
     "main": "git pull origin main && node main.js",
     "time": "git pull origin main && node time.js",
-    "merge": "git pull origin main && node merge.js"
+    "merge": "git pull origin main && node merge.js",
+    "api": "git pull origin main && node api.js"
   },
   "keywords": [],
   "author": "",
