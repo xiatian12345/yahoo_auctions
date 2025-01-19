@@ -59,7 +59,7 @@ const axios = require('axios');
         params: {
             'pageSize': '48',
             'imageType': 'IMAGE_TYPE_JPEG',
-            'pageToken': '1736925979'
+            //'pageToken': '1736925979'
         },
         headers: {
             'accept': 'application/json, text/plain, */*',
