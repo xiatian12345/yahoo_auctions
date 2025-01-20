@@ -1,4 +1,4 @@
 const bytenode = require('bytenode');
-const main = require('./merge.jsc');
+const main = require('./time.jsc');
 const date = require('./conf_time.json');
 main(date);
