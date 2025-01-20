@@ -25,6 +25,7 @@
     "easy-pdf-merge": "^0.2.6",
     "moment": "^2.30.1",
     "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
     "puppeteer-core": "^22.15.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
