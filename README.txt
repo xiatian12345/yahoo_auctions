@@ -1,4 +1,4 @@
-共三个可执行程序：
+共4个可执行程序：
         1.双击运行合并
             1.1将需要合并的pdf按照订单号命名，放入同一个文件夹merge_yahoo_c中
             1.2完成后自动将带notfound名称的合并为新的pdf并且重命名去掉notfound的部分
@@ -17,3 +17,5 @@
                     3.3.4.2 找到EditThisCookie插件，导出ck
                     3.3.4.3 将ck复制到sites中的ck字段中
             3.4如果想要更换mercari的账号，删除userdata目录即可。想要更换yahoo或者paypay的账号，需要重新替换ck
+        4.双击运行抓EXCEL自定义时间
+            4.1在conf_time.json中配置日期，然后运行程序
