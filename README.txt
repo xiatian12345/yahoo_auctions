@@ -21,3 +21,4 @@
             4.1在conf_time.json中配置日期，然后运行程序
         5.双击运行合并增加d
             5.1将需要合并的pdf按照订单号命名，放入同一个文件夹merge_all_d中
+            5.2合并时会针对data/site1/result2,data/site2/result,data/site3/result三个文件夹进行合并
