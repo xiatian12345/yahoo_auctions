@@ -1,3 +1,4 @@
+let nextOffset = { auction: 8, sparkle: 42 };
 let result = await fetch("https://paypayfleamarket.yahoo.co.jp/api/v1/users/self/items/purchase?nextOffsetSparkle=" + nextOffset.sparkle + "&nextOffsetAuction=" + nextOffset.auction + "&result=50", {
     "headers": {
         "accept": "application/json, text/plain, */*",
